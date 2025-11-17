@@ -4,29 +4,66 @@ Let's write your first Python code for data analysis! This guide will get you co
 
 ## Your First Python Session
 
-### Using Jupyter
+### Using Jupyter in VS Code (Recommended)
 
-1. Open Jupyter Lab or Jupyter Notebook:
+VS Code provides the best integrated experience for working with Jupyter notebooks.
+
+1. **Open VS Code** and open the project folder:
+   - `File > Open Folder`
+   - Select `Data-Wizardry-with-Python`
+
+2. **Select your Python interpreter**:
+   - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac)
+   - Type "Python: Select Interpreter"
+   - Choose your virtual environment (`.venv` or `venv`)
+
+3. **Open or create a notebook**:
+   - In the Explorer panel, navigate to `notebooks/`
+   - Click `01-introduction.ipynb` to open it
+   - Or create a new one: Right-click in Explorer → `New File` → name it with `.ipynb` extension
+
+4. **Write your first code**:
+   In the first cell, type:
+   
+   ```python
+   print("Hello, Python Analytics!")
+   ```
+
+5. **Run it**:
+   - Click the play (▶) button next to the cell
+   - Or press `Shift + Enter`
+
+You should see the output appear below the cell!
+
+**VS Code Jupyter Tips:**
+- IntelliSense provides auto-completion as you type
+- Hover over variables to see their values
+- Use the Variable Explorer in the top toolbar
+- Integrated debugging available with breakpoints
+
+### Using Jupyter Lab (Browser-Based Alternative)
+
+If you prefer the traditional browser interface:
+
+1. Open your terminal in VS Code (`Ctrl+` ` or `Terminal > New Terminal`)
+
+2. Start Jupyter Lab:
 
    ```bash
    jupyter lab
    ```
 
-2. Create a new notebook:
+3. Your browser will open to Jupyter Lab
+
+4. Create a new notebook:
    - Click "Python 3" under "Notebook"
    - You'll see an empty cell
 
-3. Type this code in the first cell:
+5. Type this code and press `Shift + Enter`:
 
    ```python
    print("Hello, Python Analytics!")
    ```
-
-4. Run it:
-   - Press `Shift + Enter` OR
-   - Click the "Run" button
-
-You should see the output below the cell!
 
 ## Loading Data with pandas
 

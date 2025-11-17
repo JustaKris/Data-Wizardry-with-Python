@@ -19,10 +19,18 @@ Interactive tutorials covering:
 - Statistical analysis with scipy and statsmodels
 - Real-world analytics workflows
 
+### Sample Data
+Practice with real datasets in the `data/` directory:
+- `socio_demos.csv` - Demographic information
+- `media_contacts.csv` - Media contact data
+
+These files are ready to use in notebooks and exercises!
+
 ### Documentation Site
 Comprehensive guides built with MkDocs:
-- Installation and setup instructions
-- Quickstart guides
+- Installation and setup instructions (featuring uv package manager)
+- Git guide for version control
+- Quickstart guides optimized for VS Code
 - Side-by-side comparisons (R vs Python, SPSS vs Python)
 - Reference materials and cheat sheets
 
@@ -30,30 +38,46 @@ Comprehensive guides built with MkDocs:
 
 ### Prerequisites
 - Python 3.8 or higher
-- pip or conda package manager
+- Git (see our [Git Guide](docs/getting-started/git-guide.md) for installation)
 
 ### Installation
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/JustaKris/Data-Wizardry-with-Python.git
+git clone https://gitlab.com/your-org/Data-Wizardry-with-Python.git
 cd Data-Wizardry-with-Python
 ```
 
-2. Create a virtual environment (recommended):
+2. Install uv (recommended) or use standard Python:
+
+**Using uv (recommended):**
+```bash
+# Install uv
+curl -LsSf https://astral.sh/uv/install.sh | sh  # macOS/Linux
+# or
+powershell -c "irm https://astral.sh/uv/install.ps1 | iex"  # Windows
+
+# Create virtual environment and install dependencies
+uv venv
+uv pip install -r requirements.txt
+```
+
+**Using standard Python:**
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-3. Install dependencies:
-```bash
 pip install -r requirements.txt
 ```
 
 ### Using the Notebooks
 
-Launch Jupyter Lab:
+**With VS Code (recommended):**
+1. Install VS Code and the Python + Jupyter extensions
+2. Open the project folder
+3. Select your Python interpreter
+4. Open any `.ipynb` file in the `notebooks/` directory
+
+**With Jupyter Lab:**
 ```bash
 jupyter lab
 ```
@@ -69,16 +93,18 @@ mkdocs serve
 
 Then open your browser to `http://127.0.0.1:8000`
 
+
 ## 📖 Learning Path
 
 We recommend following this sequence:
 
-1. **Start Here**: Read the documentation introduction
-2. **Setup**: Follow the installation guide
-3. **Foundations**: Work through `01-introduction.ipynb`
-4. **Core Skills**: Complete notebooks 02-04 in order
-5. **Practice**: Try the exercises in each notebook
-6. **Reference**: Use the cheat sheets as needed
+1. **Start Here**: Read the [Installation Guide](docs/getting-started/installation.md)
+2. **Version Control**: Review the [Git Guide](docs/getting-started/git-guide.md) if new to Git
+3. **Setup**: Install Python with uv and set up VS Code
+4. **Foundations**: Work through the [Quick Start](docs/getting-started/quickstart.md)
+5. **Core Skills**: Complete notebooks in order using the sample data files
+6. **Practice**: Try the exercises in each notebook
+7. **Reference**: Use the cheat sheets as needed
 
 ## 🤝 Contributing
 
@@ -88,7 +114,7 @@ We welcome contributions! Whether it's:
 - Improving explanations
 - Sharing feedback
 
-Please feel free to open an issue or submit a pull request.
+Please feel free to open an issue or submit a merge request on GitLab.
 
 ## 📝 License
 
@@ -96,7 +122,8 @@ This project is intended for internal training purposes.
 
 ## 🆘 Getting Help
 
-- Check the [documentation](https://justakris.github.io/Data-Wizardry-with-Python/)
+- Check the [documentation](https://gitlab.com/your-org/Data-Wizardry-with-Python/)
+- Review the [Git Guide](docs/getting-started/git-guide.md) for version control help
 - Review the [glossary](docs/reference/glossary.md) for terminology
 - Look at the [cheat sheets](docs/reference/cheatsheets.md) for quick reference
 - Open an issue for questions or problems
@@ -104,3 +131,10 @@ This project is intended for internal training purposes.
 ## 🌟 Acknowledgments
 
 This training material builds on the excellent work of the Python, pandas, and Jupyter communities.
+
+---
+
+**Note**: This repository is transitioning to GitLab. Update your remote if you have an existing clone:
+```bash
+git remote set-url origin https://gitlab.com/your-org/Data-Wizardry-with-Python.git
+```
