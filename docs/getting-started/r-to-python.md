@@ -14,13 +14,15 @@ Welcome R users! This guide will help you leverage your R knowledge to quickly b
 
 ## Installation & Setup
 
-### R
+***R***
+
 ```r
 install.packages("dplyr")
 library(dplyr)
 ```
 
-### Python
+***Python***
+
 ```python
 # Install (in terminal)
 pip install pandas
@@ -31,7 +33,8 @@ import pandas as pd
 
 ## Reading Data
 
-### R
+***R***
+
 ```r
 # CSV
 df <- read.csv("data.csv")
@@ -44,7 +47,8 @@ df <- read_excel("data.xlsx")
 data(iris)
 ```
 
-### Python
+***Python***
+
 ```python
 # CSV
 df = pd.read_csv("data.csv")
@@ -59,7 +63,8 @@ iris = load_iris(as_frame=True)
 
 ## Data Inspection
 
-### R
+***R***
+
 ```r
 head(df)
 tail(df)
@@ -69,7 +74,8 @@ dim(df)
 names(df)
 ```
 
-### Python
+***Python***
+
 ```python
 df.head()
 df.tail()
@@ -81,7 +87,8 @@ df.columns
 
 ## Selecting Columns
 
-### R
+***R***
+
 ```r
 # Single column
 df$column_name
@@ -94,7 +101,8 @@ df[, c("col1", "col2")]
 df %>% select(col1, col2)
 ```
 
-### Python
+***Python***
+
 ```python
 # Single column
 df['column_name']
@@ -109,7 +117,8 @@ df.filter(['col1', 'col2'])
 
 ## Filtering Rows
 
-### R
+***R***
+
 ```r
 # Base R
 df[df$age > 25, ]
@@ -121,7 +130,8 @@ df %>% filter(age > 25)
 df %>% filter(age > 25 & dept == "Sales")
 ```
 
-### Python
+***Python***
+
 ```python
 # Basic
 df[df['age'] > 25]
@@ -135,7 +145,8 @@ df.query('age > 25 & dept == "Sales"')
 
 ## Creating New Columns
 
-### R
+***R***
+
 ```r
 # Base R
 df$new_col <- df$col1 + df$col2
@@ -144,7 +155,8 @@ df$new_col <- df$col1 + df$col2
 df <- df %>% mutate(new_col = col1 + col2)
 ```
 
-### Python
+***Python***
+
 ```python
 # Direct assignment
 df['new_col'] = df['col1'] + df['col2']
@@ -155,7 +167,8 @@ df = df.assign(new_col = lambda x: x['col1'] + x['col2'])
 
 ## Grouping and Aggregating
 
-### R
+***R***
+
 ```r
 # dplyr
 df %>%
@@ -166,7 +179,8 @@ df %>%
   )
 ```
 
-### Python
+***Python***
+
 ```python
 # pandas
 df.groupby('department').agg({
@@ -179,7 +193,8 @@ df.groupby('department')['salary'].agg(['mean', 'count'])
 
 ## Sorting
 
-### R
+***R***
+
 ```r
 # Base R
 df[order(df$age), ]
@@ -189,7 +204,8 @@ df %>% arrange(age)
 df %>% arrange(desc(age))
 ```
 
-### Python
+***Python***
+
 ```python
 # pandas
 df.sort_values('age')
@@ -201,7 +217,8 @@ df.sort_values(['dept', 'age'], ascending=[True, False])
 
 ## Reshaping Data
 
-### R
+***R***
+
 ```r
 # Wide to long
 library(tidyr)
@@ -211,7 +228,8 @@ df_long <- df %>% pivot_longer(cols = c(Q1, Q2, Q3))
 df_wide <- df %>% pivot_wider(names_from = quarter, values_from = revenue)
 ```
 
-### Python
+***Python***
+
 ```python
 # Wide to long
 df_long = pd.melt(df, id_vars=['id'], value_vars=['Q1', 'Q2', 'Q3'])
@@ -222,7 +240,8 @@ df_wide = df.pivot(index='id', columns='quarter', values='revenue')
 
 ## Joining Data
 
-### R
+***R***
+
 ```r
 # dplyr
 left_join(df1, df2, by = "id")
@@ -230,7 +249,8 @@ inner_join(df1, df2, by = "id")
 full_join(df1, df2, by = "id")
 ```
 
-### Python
+***Python***
+
 ```python
 # pandas
 pd.merge(df1, df2, on='id', how='left')
@@ -240,7 +260,8 @@ pd.merge(df1, df2, on='id', how='outer')
 
 ## Missing Data
 
-### R
+***R***
+
 ```r
 # Check for NA
 is.na(df$column)
@@ -252,7 +273,8 @@ df %>% drop_na()
 df %>% replace_na(list(column = 0))
 ```
 
-### Python
+***Python***
+
 ```python
 # Check for NaN
 df['column'].isna()
@@ -267,7 +289,8 @@ df['column'].fillna(0)
 
 ## Visualization
 
-### R (ggplot2)
+***R*** (ggplot2)
+
 ```r
 library(ggplot2)
 
@@ -276,7 +299,8 @@ ggplot(df, aes(x = age, y = salary)) +
   labs(title = "Salary vs Age")
 ```
 
-### Python (matplotlib/seaborn)
+***Python*** (matplotlib/seaborn)
+
 ```python
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -296,7 +320,8 @@ plt.show()
 
 ## Statistical Tests
 
-### R
+***R***
+
 ```r
 # t-test
 t.test(group1, group2)
@@ -310,7 +335,8 @@ aov_result <- aov(value ~ group, data = df)
 summary(aov_result)
 ```
 
-### Python
+***Python***
+
 ```python
 from scipy import stats
 import statsmodels.formula.api as smf
@@ -329,7 +355,8 @@ print(stats.f_oneway(group1, group2, group3))
 
 ## The Pipe Operator
 
-### R (tidyverse)
+***R*** (tidyverse)
+
 ```r
 df %>%
   filter(age > 25) %>%
@@ -338,7 +365,8 @@ df %>%
   arrange(desc(avg_salary))
 ```
 
-### Python (method chaining)
+***Python*** (method chaining)
+
 ```python
 (df
  .query('age > 25')

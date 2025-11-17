@@ -7,6 +7,7 @@ Let's write your first Python code for data analysis! This guide will get you co
 ### Using Jupyter
 
 1. Open Jupyter Lab or Jupyter Notebook:
+
    ```bash
    jupyter lab
    ```
@@ -16,6 +17,7 @@ Let's write your first Python code for data analysis! This guide will get you co
    - You'll see an empty cell
 
 3. Type this code in the first cell:
+
    ```python
    print("Hello, Python Analytics!")
    ```
@@ -47,7 +49,8 @@ print(df)
 ```
 
 **Output:**
-```
+
+```text
       Name  Age Department  Salary
 0    Alice   25      Sales   50000
 1      Bob   30         IT   60000
@@ -61,21 +64,25 @@ print(df)
 Try these operations in separate cells:
 
 ### View first rows
+
 ```python
 df.head()
 ```
 
 ### Get summary statistics
+
 ```python
 df.describe()
 ```
 
 ### Check data types
+
 ```python
 df.dtypes
 ```
 
 ### Filter data
+
 ```python
 # Get all employees in Sales
 sales_team = df[df['Department'] == 'Sales']
@@ -83,6 +90,7 @@ print(sales_team)
 ```
 
 ### Calculate averages
+
 ```python
 # Average salary by department
 avg_salary = df.groupby('Department')['Salary'].mean()

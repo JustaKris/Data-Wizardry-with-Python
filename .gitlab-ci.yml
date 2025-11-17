@@ -1,0 +1,11 @@
+pages:
+  stage: deploy
+  image: python:3.12
+  script:
+    - pip install mkdocs mkdocs-material
+    - mkdocs build -d public
+  artifacts:
+    paths:
+      - public
+  only:
+    - main

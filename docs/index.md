@@ -19,6 +19,7 @@ Python has become one of the most popular languages for data analysis because:
 ## What You'll Learn
 
 ### For R Users
+
 If you're coming from R, you'll find:
 
 - Side-by-side comparisons of R and Python syntax
@@ -27,6 +28,7 @@ If you're coming from R, you'll find:
 - Working with dataframes in both languages
 
 ### For SPSS Users
+
 If you're coming from SPSS, we'll cover:
 
 - Loading and saving SPSS files in Python
@@ -35,6 +37,7 @@ If you're coming from SPSS, we'll cover:
 - Creating publication-ready tables and charts
 
 ### For Everyone
+
 Regardless of your background:
 
 - Python fundamentals and best practices
@@ -56,7 +59,7 @@ Regardless of your background:
 
 ## Repository Structure
 
-```
+```text
 python-analytics-playground/
 ├── notebooks/          # Jupyter notebooks with hands-on tutorials
 │   ├── 01-introduction.ipynb

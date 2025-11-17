@@ -5,6 +5,7 @@ Quick reference guides for common operations.
 ## pandas Cheat Sheet
 
 ### Reading Data
+
 ```python
 pd.read_csv('file.csv')
 pd.read_excel('file.xlsx')
@@ -12,6 +13,7 @@ pd.read_spss('file.sav')
 ```
 
 ### Viewing Data
+
 ```python
 df.head()           # First 5 rows
 df.tail()           # Last 5 rows
@@ -21,6 +23,7 @@ df.describe()       # Statistics
 ```
 
 ### Selecting Data
+
 ```python
 df['column']                    # Single column
 df[['col1', 'col2']]           # Multiple columns
@@ -30,6 +33,7 @@ df[df['age'] > 25]             # Filter rows
 ```
 
 ### Data Manipulation
+
 ```python
 df['new'] = df['a'] + df['b']  # New column
 df.drop('col', axis=1)          # Drop column
@@ -39,6 +43,7 @@ df.groupby('col').mean()        # Group and aggregate
 ```
 
 ### Missing Data
+
 ```python
 df.isnull().sum()               # Count missing
 df.dropna()                     # Drop rows with NaN
@@ -46,6 +51,7 @@ df.fillna(0)                    # Fill NaN with 0
 ```
 
 ### Merging Data
+
 ```python
 pd.merge(df1, df2, on='id')    # Inner join
 pd.concat([df1, df2])           # Concatenate
@@ -54,6 +60,7 @@ pd.concat([df1, df2])           # Concatenate
 ## matplotlib Cheat Sheet
 
 ### Basic Plot
+
 ```python
 plt.plot(x, y)
 plt.xlabel('X Label')
@@ -63,6 +70,7 @@ plt.show()
 ```
 
 ### Common Plots
+
 ```python
 plt.scatter(x, y)               # Scatter plot
 plt.bar(categories, values)     # Bar chart
@@ -73,6 +81,7 @@ plt.boxplot(data)               # Box plot
 ## seaborn Cheat Sheet
 
 ### Statistical Plots
+
 ```python
 sns.scatterplot(data=df, x='a', y='b')
 sns.lineplot(data=df, x='x', y='y')
@@ -85,6 +94,7 @@ sns.heatmap(df.corr(), annot=True)
 ## NumPy Cheat Sheet
 
 ### Array Creation
+
 ```python
 np.array([1, 2, 3])            # From list
 np.zeros(5)                     # All zeros
@@ -94,6 +104,7 @@ np.linspace(0, 1, 5)           # Evenly spaced
 ```
 
 ### Array Operations
+
 ```python
 arr.mean()                      # Mean
 arr.std()                       # Standard deviation
@@ -105,6 +116,7 @@ arr.sum()                       # Sum
 ## scipy.stats Cheat Sheet
 
 ### Statistical Tests
+
 ```python
 stats.ttest_ind(group1, group2)         # t-test
 stats.pearsonr(x, y)                    # Correlation
@@ -115,6 +127,7 @@ stats.f_oneway(g1, g2, g3)             # One-way ANOVA
 ## Python Basics Cheat Sheet
 
 ### Data Types
+
 ```python
 42              # int
 3.14            # float
@@ -125,6 +138,7 @@ True            # bool
 ```
 
 ### Control Flow
+
 ```python
 if condition:
     # do something
@@ -141,6 +155,7 @@ while condition:
 ```
 
 ### Functions
+
 ```python
 def function_name(param1, param2='default'):
     # do something
@@ -148,6 +163,7 @@ def function_name(param1, param2='default'):
 ```
 
 ### List Comprehensions
+
 ```python
 [x**2 for x in range(10)]              # Squares
 [x for x in range(10) if x % 2 == 0]   # Even numbers
@@ -156,6 +172,7 @@ def function_name(param1, param2='default'):
 ## Keyboard Shortcuts (Jupyter)
 
 ### Command Mode (press Esc)
+
 - `A`: Insert cell above
 - `B`: Insert cell below
 - `DD`: Delete cell
@@ -164,6 +181,7 @@ def function_name(param1, param2='default'):
 - `Z`: Undo delete
 
 ### Edit Mode (press Enter)
+
 - `Shift + Enter`: Run cell, select below
 - `Ctrl + Enter`: Run cell
 - `Alt + Enter`: Run cell, insert below

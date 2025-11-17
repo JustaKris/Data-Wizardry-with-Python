@@ -5,6 +5,7 @@ Thank you for your interest in contributing to this training project! We welcome
 ## Ways to Contribute
 
 ### 1. Report Issues
+
 - Found a typo or error in the documentation?
 - Have a suggestion for improving a tutorial?
 - Encountered a bug in the code examples?
@@ -12,16 +13,19 @@ Thank you for your interest in contributing to this training project! We welcome
 Please open an issue describing what you found.
 
 ### 2. Improve Documentation
+
 - Fix typos, grammar, or unclear explanations
 - Add examples or clarifications
 - Improve existing tutorials
 
 ### 3. Add New Content
+
 - Create new notebooks on additional topics
 - Write new tutorial sections
 - Add more comparison examples for R/SPSS users
 
 ### 4. Review and Test
+
 - Test the notebooks and report issues
 - Verify that instructions work on different platforms
 - Suggest improvements to existing content
@@ -29,11 +33,13 @@ Please open an issue describing what you found.
 ## How to Contribute
 
 ### For Small Changes (typos, minor fixes)
+
 1. Fork the repository
 2. Make your changes
 3. Submit a pull request
 
 ### For Larger Changes (new content, major revisions)
+
 1. Open an issue first to discuss your idea
 2. Once approved, fork the repository
 3. Make your changes
@@ -42,28 +48,33 @@ Please open an issue describing what you found.
 ## Development Setup
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/JustaKris/Data-Wizardry-with-Python.git
 cd Data-Wizardry-with-Python
 ```
 
 2. Create a virtual environment:
+
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
 3. Install dependencies:
+
 ```bash
 pip install -r requirements.txt
 ```
 
 4. Test the documentation:
+
 ```bash
 mkdocs serve
 ```
 
 5. Test the notebooks:
+
 ```bash
 jupyter lab
 ```
@@ -71,12 +82,14 @@ jupyter lab
 ## Content Guidelines
 
 ### Documentation
+
 - Write clearly and concisely
 - Use examples to illustrate concepts
 - Include code snippets where appropriate
 - Test all code examples before submitting
 
 ### Notebooks
+
 - Each notebook should focus on one main topic
 - Include explanatory text with code
 - Provide exercises for practice
@@ -84,6 +97,7 @@ jupyter lab
 - Clear all output before committing (optional)
 
 ### Code Style
+
 - Follow PEP 8 for Python code
 - Use meaningful variable names
 - Add comments for complex operations

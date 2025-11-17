@@ -3,33 +3,40 @@
 ## Official Documentation
 
 ### Python
+
 - [Python.org](https://www.python.org/) - Official Python website
 - [Python Tutorial](https://docs.python.org/3/tutorial/) - Official tutorial
 - [Python Standard Library](https://docs.python.org/3/library/) - Built-in modules
 
 ### pandas
+
 - [pandas Documentation](https://pandas.pydata.org/docs/) - Official docs
 - [10 Minutes to pandas](https://pandas.pydata.org/docs/user_guide/10min.html) - Quick start
 - [pandas Cookbook](https://pandas.pydata.org/docs/user_guide/cookbook.html) - Recipes
 
 ### NumPy
+
 - [NumPy Documentation](https://numpy.org/doc/) - Official docs
 - [NumPy for Beginners](https://numpy.org/doc/stable/user/absolute_beginners.html) - Getting started
 
 ### Matplotlib
+
 - [Matplotlib Documentation](https://matplotlib.org/) - Official docs
 - [Matplotlib Gallery](https://matplotlib.org/stable/gallery/index.html) - Example plots
 
 ### Seaborn
+
 - [Seaborn Documentation](https://seaborn.pydata.org/) - Official docs
 - [Seaborn Tutorial](https://seaborn.pydata.org/tutorial.html) - Comprehensive guide
 - [Seaborn Gallery](https://seaborn.pydata.org/examples/index.html) - Example plots
 
 ### SciPy
+
 - [SciPy Documentation](https://docs.scipy.org/doc/scipy/) - Official docs
 - [SciPy Stats](https://docs.scipy.org/doc/scipy/reference/stats.html) - Statistical functions
 
 ### statsmodels
+
 - [statsmodels Documentation](https://www.statsmodels.org/stable/index.html) - Official docs
 - [statsmodels Examples](https://www.statsmodels.org/stable/examples/index.html) - Code examples
 
@@ -43,16 +50,19 @@
 ## Books
 
 ### For Beginners
+
 - **Python Crash Course** by Eric Matthes
 - **Automate the Boring Stuff with Python** by Al Sweigart (free online)
 - **Think Python** by Allen Downey (free online)
 
 ### For Data Analysis
+
 - **Python for Data Analysis** by Wes McKinney (pandas creator)
 - **Python Data Science Handbook** by Jake VanderPlas (free online)
 - **Pandas in Action** by Boris Paskhaver
 
 ### For Statistics
+
 - **Think Stats** by Allen Downey (free online)
 - **Statistical Thinking in Python** (DataCamp course)
 - **An Introduction to Statistical Learning** (with Python examples)
@@ -134,9 +144,10 @@
 - [PyCoders Weekly](https://pycoders.com/) - Newsletter
 - [Planet Python](https://planetpython.org/) - Blog aggregator
 
-## Keep Learning!
+**Keep Learning!**
 
 The Python ecosystem is vast and constantly evolving. These resources will help you:
+
 - Stay updated with new features and best practices
 - Find answers to specific questions
 - Connect with other Python users

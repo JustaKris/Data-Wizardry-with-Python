@@ -12,6 +12,7 @@ Anaconda is a Python distribution that includes most data science packages pre-i
 2. Run the installer for your operating system
 3. Follow the installation wizard (accept defaults)
 4. Verify installation:
+
    ```bash
    conda --version
    python --version
@@ -25,6 +26,7 @@ If you prefer a lighter installation:
 2. Run the installer
    - ✅ Check "Add Python to PATH" (Windows)
 3. Verify installation:
+
    ```bash
    python --version
    pip --version
@@ -78,6 +80,7 @@ pip install -r requirements.txt
 ```
 
 This will install:
+
 - **pandas**: Data manipulation
 - **numpy**: Numerical computing
 - **matplotlib & seaborn**: Visualization
@@ -143,16 +146,19 @@ If you get import errors:
 While Jupyter is great for learning, you might also want:
 
 ### Visual Studio Code
+
 - Free, powerful editor
 - Great Python and Jupyter support
 - Download: [code.visualstudio.com](https://code.visualstudio.com/)
 
 ### PyCharm
+
 - Python-specific IDE
 - Community edition is free
 - Download: [jetbrains.com/pycharm](https://www.jetbrains.com/pycharm/)
 
 ### Jupyter Lab
+
 - Modern notebook interface
 - Already installed with our requirements
 - Launch with `jupyter lab`

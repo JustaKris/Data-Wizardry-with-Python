@@ -15,6 +15,7 @@ Welcome SPSS users! This guide will help you translate your SPSS knowledge into 
 Python can read SPSS `.sav` files directly!
 
 ### Using pyreadstat
+
 ```python
 import pandas as pd
 import pyreadstat
@@ -31,6 +32,7 @@ print(meta.variable_value_labels)
 ```
 
 ### Using pandas (newer SPSS files)
+
 ```python
 import pandas as pd
 
@@ -43,12 +45,14 @@ df = pd.read_spss('data.sav')
 ### FREQUENCIES
 
 **SPSS:**
+
 ```spss
 FREQUENCIES VARIABLES=gender department
   /ORDER=ANALYSIS.
 ```
 
 **Python:**
+
 ```python
 # Single variable
 print(df['gender'].value_counts())
@@ -65,12 +69,14 @@ print(df['gender'].value_counts(normalize=True) * 100)
 ### DESCRIPTIVES
 
 **SPSS:**
+
 ```spss
 DESCRIPTIVES VARIABLES=age salary
   /STATISTICS=MEAN STDDEV MIN MAX.
 ```
 
 **Python:**
+
 ```python
 # Basic descriptives
 print(df[['age', 'salary']].describe())
@@ -82,6 +88,7 @@ print(df[['age', 'salary']].agg(['mean', 'std', 'min', 'max']))
 ### CROSSTABS
 
 **SPSS:**
+
 ```spss
 CROSSTABS
   /TABLES=department BY gender
@@ -89,6 +96,7 @@ CROSSTABS
 ```
 
 **Python:**
+
 ```python
 # Create crosstab
 crosstab = pd.crosstab(df['department'], df['gender'])
@@ -105,12 +113,14 @@ print(f"p-value: {p_value}")
 ### T-TEST
 
 **SPSS:**
+
 ```spss
 T-TEST GROUPS=gender(0 1)
   /VARIABLES=salary.
 ```
 
 **Python:**
+
 ```python
 from scipy import stats
 
@@ -127,6 +137,7 @@ print(f"p-value: {p_value}")
 ### ONEWAY ANOVA
 
 **SPSS:**
+
 ```spss
 ONEWAY salary BY department
   /STATISTICS=DESCRIPTIVES
@@ -134,6 +145,7 @@ ONEWAY salary BY department
 ```
 
 **Python:**
+
 ```python
 from scipy import stats
 import statsmodels.api as sm
@@ -159,6 +171,7 @@ print(tukey)
 ### REGRESSION
 
 **SPSS:**
+
 ```spss
 REGRESSION
   /DEPENDENT salary
@@ -166,6 +179,7 @@ REGRESSION
 ```
 
 **Python:**
+
 ```python
 import statsmodels.formula.api as smf
 
@@ -183,6 +197,7 @@ print(f"R-squared: {model.rsquared}")
 ### CORRELATION
 
 **SPSS:**
+
 ```spss
 CORRELATIONS
   /VARIABLES=age salary experience
@@ -190,6 +205,7 @@ CORRELATIONS
 ```
 
 **Python:**
+
 ```python
 # Pearson correlation matrix
 corr_matrix = df[['age', 'salary', 'experience']].corr()
@@ -208,11 +224,13 @@ print(f"p-value: {p}")
 ### SELECT IF
 
 **SPSS:**
+
 ```spss
 SELECT IF (age >= 25 AND department = 'Sales').
 ```
 
 **Python:**
+
 ```python
 # Filter data
 filtered_df = df[(df['age'] >= 25) & (df['department'] == 'Sales')]
@@ -221,11 +239,13 @@ filtered_df = df[(df['age'] >= 25) & (df['department'] == 'Sales')]
 ### COMPUTE
 
 **SPSS:**
+
 ```spss
 COMPUTE total_comp = salary + bonus.
 ```
 
 **Python:**
+
 ```python
 # Create new variable
 df['total_comp'] = df['salary'] + df['bonus']
@@ -234,11 +254,13 @@ df['total_comp'] = df['salary'] + df['bonus']
 ### RECODE
 
 **SPSS:**
+
 ```spss
 RECODE age (18 thru 30=1) (31 thru 50=2) (51 thru 99=3) INTO age_group.
 ```
 
 **Python:**
+
 ```python
 # Using cut
 df['age_group'] = pd.cut(df['age'], 
@@ -258,11 +280,13 @@ df['age_group'] = np.select(conditions, [1, 2, 3])
 ### SORT CASES
 
 **SPSS:**
+
 ```spss
 SORT CASES BY department age (D).
 ```
 
 **Python:**
+
 ```python
 # Sort data
 df = df.sort_values(['department', 'age'], ascending=[True, False])
@@ -271,6 +295,7 @@ df = df.sort_values(['department', 'age'], ascending=[True, False])
 ### AGGREGATE
 
 **SPSS:**
+
 ```spss
 AGGREGATE
   /OUTFILE=* MODE=ADDVARIABLES
@@ -279,6 +304,7 @@ AGGREGATE
 ```
 
 **Python:**
+
 ```python
 # Group statistics
 df['mean_salary'] = df.groupby('department')['salary'].transform('mean')
@@ -289,12 +315,14 @@ df['mean_salary'] = df.groupby('department')['salary'].transform('mean')
 ### Custom Tables
 
 **SPSS:**
+
 ```spss
 CTABLES
   /TABLE department BY salary [MEAN]
 ```
 
 **Python:**
+
 ```python
 # Pivot table
 table = df.pivot_table(values='salary', 
@@ -315,12 +343,14 @@ print(table)
 ### Bar Chart
 
 **SPSS:**
+
 ```spss
 GRAPH
   /BAR=COUNT BY department.
 ```
 
 **Python:**
+
 ```python
 import matplotlib.pyplot as plt
 
@@ -335,12 +365,14 @@ plt.show()
 ### Histogram
 
 **SPSS:**
+
 ```spss
 GRAPH
   /HISTOGRAM=salary.
 ```
 
 **Python:**
+
 ```python
 # Histogram
 df['salary'].hist(bins=20)
@@ -353,12 +385,14 @@ plt.show()
 ### Scatterplot
 
 **SPSS:**
+
 ```spss
 GRAPH
   /SCATTERPLOT=age WITH salary.
 ```
 
 **Python:**
+
 ```python
 # Scatter plot
 plt.scatter(df['age'], df['salary'])
@@ -376,11 +410,13 @@ plt.show()
 ## Missing Values
 
 ### SPSS
+
 ```spss
 RECODE age (SYSMIS=99).
 ```
 
 ### Python
+
 ```python
 # Check for missing
 print(df.isnull().sum())
@@ -400,6 +436,7 @@ df_clean = df.dropna(axis=1)
 ### Export to SPSS
 
 **Python:**
+
 ```python
 # Save as SPSS file
 pyreadstat.write_sav(df, 'output.sav')
@@ -408,6 +445,7 @@ pyreadstat.write_sav(df, 'output.sav')
 ### Export to Excel
 
 **Python:**
+
 ```python
 # Save to Excel
 df.to_excel('output.xlsx', index=False)
@@ -421,6 +459,7 @@ with pd.ExcelWriter('output.xlsx') as writer:
 ### Export to CSV
 
 **Python:**
+
 ```python
 # Save to CSV
 df.to_csv('output.csv', index=False)
