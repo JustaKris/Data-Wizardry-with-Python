@@ -1,11 +1,11 @@
 site_name: Python Analytics Playground
 site_description: Training materials for transitioning from R and SPSS to Python and pandas
 site_author: Internal Training Team
-site_url: https://justakris.github.io/Data-Wizardry-with-Python/
+site_url: https://gitlab.com/your-org/Data-Wizardry-with-Python/
 
 # Repository
-repo_name: JustaKris/Data-Wizardry-with-Python
-repo_url: https://github.com/JustaKris/Data-Wizardry-with-Python
+repo_name: Data-Wizardry-with-Python
+repo_url: https://gitlab.com/your-org/Data-Wizardry-with-Python
 
 # Theme
 theme:
@@ -55,6 +55,7 @@ nav:
   - Home: index.md
   - Getting Started:
     - Installation: getting-started/installation.md
+    - Git Guide: getting-started/git-guide.md
     - Quick Start: getting-started/quickstart.md
     - For R Users: getting-started/r-to-python.md
     - For SPSS Users: getting-started/spss-to-python.md
@@ -75,5 +76,5 @@ plugins:
 # Extra
 extra:
   social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/JustaKris/Data-Wizardry-with-Python
+    - icon: fontawesome/brands/gitlab
+      link: https://gitlab.com/your-org/Data-Wizardry-with-Python

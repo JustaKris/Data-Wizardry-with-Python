@@ -2,6 +2,157 @@
 
 Welcome R users! This guide will help you leverage your R knowledge to quickly become productive in Python.
 
+## Core dplyr to pandas Quick Reference
+
+The table below shows the most common R dplyr operations and their pandas equivalents. These are the operations you'll use daily.
+
+### Select Columns
+
+| Operation | R (dplyr) | Python (pandas) |
+|-----------|-----------|----------------|
+| Select specific columns | `df %>% select(name, age)` | `df[['name', 'age']]` |
+| Select by condition | `df %>% select(starts_with("sal"))` | `df.filter(like='sal')` |
+| Drop columns | `df %>% select(-age)` | `df.drop(columns=['age'])` |
+
+**Pandas Example:**
+```python
+import pandas as pd
+
+# Sample data
+df = pd.DataFrame({
+    'name': ['Alice', 'Bob', 'Charlie'],
+    'age': [25, 30, 35],
+    'salary': [50000, 60000, 55000],
+    'dept': ['Sales', 'IT', 'Sales']
+})
+
+# Select specific columns
+result = df[['name', 'age']]
+```
+
+### Filter Rows
+
+| Operation | R (dplyr) | Python (pandas) |
+|-----------|-----------|----------------|
+| Simple filter | `df %>% filter(age > 25)` | `df[df['age'] > 25]` |
+| Multiple conditions (AND) | `df %>% filter(age > 25 & dept == "Sales")` | `df[(df['age'] > 25) & (df['dept'] == 'Sales')]` |
+| Multiple conditions (OR) | `df %>% filter(age > 25 \| dept == "Sales")` | `df[(df['age'] > 25) \| (df['dept'] == 'Sales')]` |
+| Using query (cleaner) | N/A | `df.query('age > 25 & dept == "Sales"')` |
+
+**Pandas Example:**
+```python
+# Filter rows where age > 25
+result = df[df['age'] > 25]
+
+# Multiple conditions - need parentheses and & instead of 'and'
+result = df[(df['age'] > 25) & (df['dept'] == 'Sales')]
+
+# Using query method (more readable)
+result = df.query('age > 25 & dept == "Sales"')
+```
+
+### Create/Modify Columns (Mutate)
+
+| Operation | R (dplyr) | Python (pandas) |
+|-----------|-----------|----------------|
+| Create new column | `df %>% mutate(bonus = salary * 0.1)` | `df['bonus'] = df['salary'] * 0.1` |
+| Multiple columns | `df %>% mutate(bonus = salary * 0.1, total = salary + bonus)` | `df.assign(bonus=df['salary'] * 0.1).assign(total=lambda x: x['salary'] + x['bonus'])` |
+| Conditional column | `df %>% mutate(senior = if_else(age > 30, "Yes", "No"))` | `df['senior'] = df['age'].apply(lambda x: 'Yes' if x > 30 else 'No')` or `np.where(df['age'] > 30, 'Yes', 'No')` |
+
+**Pandas Example:**
+```python
+import numpy as np
+
+# Create new column
+df['bonus'] = df['salary'] * 0.1
+
+# Create multiple columns
+df['bonus'] = df['salary'] * 0.1
+df['total_comp'] = df['salary'] + df['bonus']
+
+# Method chaining with assign
+df = df.assign(
+    bonus=lambda x: x['salary'] * 0.1,
+    total_comp=lambda x: x['salary'] + x['bonus']
+)
+
+# Conditional column
+df['senior'] = np.where(df['age'] > 30, 'Yes', 'No')
+# Or using apply
+df['senior'] = df['age'].apply(lambda x: 'Yes' if x > 30 else 'No')
+```
+
+### Group By and Summarise
+
+| Operation | R (dplyr) | Python (pandas) |
+|-----------|-----------|----------------|
+| Single aggregation | `df %>% group_by(dept) %>% summarise(avg_sal = mean(salary))` | `df.groupby('dept')['salary'].mean()` |
+| Multiple aggregations | `df %>% group_by(dept) %>% summarise(avg_sal = mean(salary), count = n())` | `df.groupby('dept')['salary'].agg(['mean', 'count'])` |
+| Multiple columns | `df %>% group_by(dept) %>% summarise(avg_sal = mean(salary), avg_age = mean(age))` | `df.groupby('dept').agg({'salary': 'mean', 'age': 'mean'})` |
+| Multiple groups | `df %>% group_by(dept, senior) %>% summarise(avg_sal = mean(salary))` | `df.groupby(['dept', 'senior'])['salary'].mean()` |
+
+**Pandas Example:**
+```python
+# Single aggregation
+result = df.groupby('dept')['salary'].mean()
+
+# Multiple aggregations on same column
+result = df.groupby('dept')['salary'].agg(['mean', 'count', 'min', 'max'])
+
+# Multiple aggregations on different columns
+result = df.groupby('dept').agg({
+    'salary': ['mean', 'sum'],
+    'age': ['mean', 'min', 'max']
+})
+
+# Multiple grouping variables
+result = df.groupby(['dept', 'senior'])['salary'].mean()
+
+# With custom names (pandas 0.25+)
+result = df.groupby('dept').agg(
+    avg_salary=('salary', 'mean'),
+    count=('salary', 'size'),
+    max_age=('age', 'max')
+)
+```
+
+### Join/Merge DataFrames
+
+| Operation | R (dplyr) | Python (pandas) |
+|-----------|-----------|----------------|
+| Left join | `left_join(df1, df2, by = "id")` | `pd.merge(df1, df2, on='id', how='left')` |
+| Inner join | `inner_join(df1, df2, by = "id")` | `pd.merge(df1, df2, on='id', how='inner')` |
+| Full outer join | `full_join(df1, df2, by = "id")` | `pd.merge(df1, df2, on='id', how='outer')` |
+| Join on different columns | `left_join(df1, df2, by = c("id1" = "id2"))` | `pd.merge(df1, df2, left_on='id1', right_on='id2', how='left')` |
+
+**Pandas Example:**
+```python
+# Sample data for joins
+df1 = pd.DataFrame({
+    'id': [1, 2, 3],
+    'name': ['Alice', 'Bob', 'Charlie']
+})
+
+df2 = pd.DataFrame({
+    'id': [1, 2, 4],
+    'salary': [50000, 60000, 55000]
+})
+
+# Left join - keep all rows from df1
+result = pd.merge(df1, df2, on='id', how='left')
+
+# Inner join - only matching rows
+result = pd.merge(df1, df2, on='id', how='inner')
+
+# Outer join - all rows from both
+result = pd.merge(df1, df2, on='id', how='outer')
+
+# Join on different column names
+result = pd.merge(df1, df2, left_on='id', right_on='employee_id', how='left')
+```
+
+---
+
 ## Philosophy Differences
 
 | Aspect | R | Python |
@@ -12,7 +163,10 @@ Welcome R users! This guide will help you leverage your R knowledge to quickly b
 | **Assignment** | `<-` or `=` | `=` |
 | **Packages** | CRAN, install.packages() | PyPI, pip install |
 
-## Installation & Setup
+
+## Additional Operations
+
+### Installation & Setup
 
 ***R***
 
@@ -31,7 +185,7 @@ pip install pandas
 import pandas as pd
 ```
 
-## Reading Data
+### Reading Data
 
 ***R***
 
@@ -42,9 +196,6 @@ df <- read.csv("data.csv")
 # Excel
 library(readxl)
 df <- read_excel("data.xlsx")
-
-# Built-in data
-data(iris)
 ```
 
 ***Python***
@@ -56,149 +207,26 @@ df = pd.read_csv("data.csv")
 # Excel
 df = pd.read_excel("data.xlsx")
 
-# Built-in data
-from sklearn.datasets import load_iris
-iris = load_iris(as_frame=True)
+# Using local data files
+df = pd.read_csv("data/socio_demos.csv")
 ```
 
-## Data Inspection
+### Data Inspection
+
+| R | Python |
+|---|--------|
+| `head(df)` | `df.head()` |
+| `tail(df)` | `df.tail()` |
+| `str(df)` | `df.info()` |
+| `summary(df)` | `df.describe()` |
+| `dim(df)` | `df.shape` |
+| `names(df)` | `df.columns` |
+
+### Sorting
 
 ***R***
 
 ```r
-head(df)
-tail(df)
-str(df)
-summary(df)
-dim(df)
-names(df)
-```
-
-***Python***
-
-```python
-df.head()
-df.tail()
-df.info()
-df.describe()
-df.shape
-df.columns
-```
-
-## Selecting Columns
-
-***R***
-
-```r
-# Single column
-df$column_name
-df[, "column_name"]
-
-# Multiple columns
-df[, c("col1", "col2")]
-
-# dplyr
-df %>% select(col1, col2)
-```
-
-***Python***
-
-```python
-# Single column
-df['column_name']
-df.column_name  # if no spaces in name
-
-# Multiple columns
-df[['col1', 'col2']]
-
-# Method chaining
-df.filter(['col1', 'col2'])
-```
-
-## Filtering Rows
-
-***R***
-
-```r
-# Base R
-df[df$age > 25, ]
-
-# dplyr
-df %>% filter(age > 25)
-
-# Multiple conditions
-df %>% filter(age > 25 & dept == "Sales")
-```
-
-***Python***
-
-```python
-# Basic
-df[df['age'] > 25]
-
-# Multiple conditions (use &, |, ~)
-df[(df['age'] > 25) & (df['dept'] == "Sales")]
-
-# Query method (more readable)
-df.query('age > 25 & dept == "Sales"')
-```
-
-## Creating New Columns
-
-***R***
-
-```r
-# Base R
-df$new_col <- df$col1 + df$col2
-
-# dplyr
-df <- df %>% mutate(new_col = col1 + col2)
-```
-
-***Python***
-
-```python
-# Direct assignment
-df['new_col'] = df['col1'] + df['col2']
-
-# Using assign (method chaining)
-df = df.assign(new_col = lambda x: x['col1'] + x['col2'])
-```
-
-## Grouping and Aggregating
-
-***R***
-
-```r
-# dplyr
-df %>%
-  group_by(department) %>%
-  summarize(
-    avg_salary = mean(salary),
-    count = n()
-  )
-```
-
-***Python***
-
-```python
-# pandas
-df.groupby('department').agg({
-    'salary': ['mean', 'count']
-})
-
-# Or more explicitly
-df.groupby('department')['salary'].agg(['mean', 'count'])
-```
-
-## Sorting
-
-***R***
-
-```r
-# Base R
-df[order(df$age), ]
-
 # dplyr
 df %>% arrange(age)
 df %>% arrange(desc(age))
@@ -215,7 +243,7 @@ df.sort_values('age', ascending=False)
 df.sort_values(['dept', 'age'], ascending=[True, False])
 ```
 
-## Reshaping Data
+### Reshaping Data
 
 ***R***
 
@@ -238,27 +266,8 @@ df_long = pd.melt(df, id_vars=['id'], value_vars=['Q1', 'Q2', 'Q3'])
 df_wide = df.pivot(index='id', columns='quarter', values='revenue')
 ```
 
-## Joining Data
 
-***R***
-
-```r
-# dplyr
-left_join(df1, df2, by = "id")
-inner_join(df1, df2, by = "id")
-full_join(df1, df2, by = "id")
-```
-
-***Python***
-
-```python
-# pandas
-pd.merge(df1, df2, on='id', how='left')
-pd.merge(df1, df2, on='id', how='inner')
-pd.merge(df1, df2, on='id', how='outer')
-```
-
-## Missing Data
+### Missing Data
 
 ***R***
 
@@ -287,73 +296,7 @@ df.fillna(0)
 df['column'].fillna(0)
 ```
 
-## Visualization
-
-***R*** (ggplot2)
-
-```r
-library(ggplot2)
-
-ggplot(df, aes(x = age, y = salary)) +
-  geom_point() +
-  labs(title = "Salary vs Age")
-```
-
-***Python*** (matplotlib/seaborn)
-
-```python
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-# matplotlib
-plt.scatter(df['age'], df['salary'])
-plt.xlabel('Age')
-plt.ylabel('Salary')
-plt.title('Salary vs Age')
-plt.show()
-
-# seaborn (more ggplot2-like)
-sns.scatterplot(data=df, x='age', y='salary')
-plt.title('Salary vs Age')
-plt.show()
-```
-
-## Statistical Tests
-
-***R***
-
-```r
-# t-test
-t.test(group1, group2)
-
-# Linear regression
-model <- lm(y ~ x1 + x2, data = df)
-summary(model)
-
-# ANOVA
-aov_result <- aov(value ~ group, data = df)
-summary(aov_result)
-```
-
-***Python***
-
-```python
-from scipy import stats
-import statsmodels.formula.api as smf
-
-# t-test
-stats.ttest_ind(group1, group2)
-
-# Linear regression
-model = smf.ols('y ~ x1 + x2', data=df).fit()
-print(model.summary())
-
-# ANOVA
-model = smf.ols('value ~ C(group)', data=df).fit()
-print(stats.f_oneway(group1, group2, group3))
-```
-
-## The Pipe Operator
+### The Pipe Operator / Method Chaining
 
 ***R*** (tidyverse)
 
@@ -376,6 +319,56 @@ df %>%
 )
 ```
 
+## Visualization
+
+***R*** (ggplot2)
+
+```r
+library(ggplot2)
+
+ggplot(df, aes(x = age, y = salary)) +
+  geom_point() +
+  labs(title = "Salary vs Age")
+```
+
+***Python*** (seaborn - most ggplot2-like)
+
+```python
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+sns.scatterplot(data=df, x='age', y='salary')
+plt.title('Salary vs Age')
+plt.show()
+```
+
+## Statistical Tests
+
+***R***
+
+```r
+# t-test
+t.test(group1, group2)
+
+# Linear regression
+model <- lm(y ~ x1 + x2, data = df)
+summary(model)
+```
+
+***Python***
+
+```python
+from scipy import stats
+import statsmodels.formula.api as smf
+
+# t-test
+stats.ttest_ind(group1, group2)
+
+# Linear regression
+model = smf.ols('y ~ x1 + x2', data=df).fit()
+print(model.summary())
+```
+
 ## Pro Tips for R Users
 
 !!! tip "Embrace 0-based indexing"
@@ -393,21 +386,11 @@ df %>%
 !!! warning "Watch out for copies vs views"
     In pandas, some operations return views, others return copies. Use `.copy()` when unsure.
 
-## Quick Reference Card
-
-| Task | R | Python |
-|------|---|--------|
-| First 6 rows | `head(df)` | `df.head()` |
-| Filter | `df %>% filter(x > 5)` | `df[df['x'] > 5]` |
-| Select | `df %>% select(a, b)` | `df[['a', 'b']]` |
-| Mutate | `df %>% mutate(c = a + b)` | `df['c'] = df['a'] + df['b']` |
-| Group & Summarize | `df %>% group_by(g) %>% summarize(m = mean(x))` | `df.groupby('g')['x'].mean()` |
-| Sort | `df %>% arrange(x)` | `df.sort_values('x')` |
-
 ## Next Steps
 
 - Try the [Python Basics Tutorial](../tutorials/01-python-basics.md)
-- Work through `notebooks/01-introduction.ipynb`
+- Work through the notebooks in the `notebooks/` directory
+- Experiment with the data files in `data/` directory
 - Check out [pandas documentation](https://pandas.pydata.org/docs/)
 - Explore the [cheat sheets](../reference/cheatsheets.md)
 
