@@ -3,7 +3,7 @@
 Quick reference for common pandas operations.
 
 !!! info "See Also"
-    For complete examples with real data, check out the **[notebooks](../../notebooks/)** folder, starting with **[01_data_loading.ipynb](../../notebooks/01_data_loading.ipynb)**.
+    For complete examples with real data, check out the **[notebooks](../../notebooks/)** folder, starting with **[01_into_and_data_loading.ipynb](../../notebooks/01_into_and_data_loading.ipynb)**.
 
 ## Import
 

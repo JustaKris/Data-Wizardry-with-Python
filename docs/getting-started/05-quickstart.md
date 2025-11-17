@@ -251,7 +251,7 @@ dir(df)
 
 Now that you've got the basics:
 
-1. **Explore the notebooks**: Try `notebooks/01_data_loading.ipynb`
+1. **Explore the notebooks**: Try `notebooks/01_into_and_data_loading.ipynb`
 2. **Learn Python basics**: Read [Python Basics for Analysts](../guides/python_basics_for_analysts.md)
 3. **Master pandas**: Check out the [Pandas Overview](../guides/pandas/overview.md)
 4. **Coming from R?**: See the [R to Python Guide](r-to-python.md)

@@ -243,5 +243,5 @@ Your browser opens to Jupyter Lab. Navigate to `notebooks/` and start working.
 Now you're ready to:
 
 1. **Start learning**: Try the [Quick Start Guide](quickstart.md)
-2. **Open a tutorial**: Check `notebooks/01_data_loading.ipynb`
+2. **Open a tutorial**: Check `notebooks/01_into_and_data_loading.ipynb`
 3. **Explore pandas**: Read the [Pandas Overview](../guides/pandas/overview.md)

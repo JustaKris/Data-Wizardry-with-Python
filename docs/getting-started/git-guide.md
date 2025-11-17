@@ -336,7 +336,7 @@ SSH keys provide secure authentication without passwords.
 4. **Test connection**:
 
    ```bash
-   ssh -T git@gitlab.com
+   ssh -T git@gitlab.td.gfk.com
    ```
 
 ## Best Practices

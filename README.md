@@ -16,12 +16,13 @@ This repository is designed for:
 
 Step-by-step tutorials in `notebooks/` covering the full data analysis workflow:
 
-1. **Data Loading** (`01_data_loading.ipynb`) - Read CSV/Excel files into pandas, inspect DataFrames
-2. **Data Cleaning** (`02_data_cleaning.ipynb`) - Handle missing values, duplicates, data quality
-3. **Exploratory Data Analysis** (`03_eda.ipynb`) - Summarize and visualize your data
-4. **Data Manipulation** (`04_data_manipulation.ipynb`) - Filter, transform, reshape data
-5. **Advanced Analysis** (`05_advanced_analysis.ipynb`) - Grouping, aggregation, joins
-6. **Exporting** (`06_exporting.ipynb`) - Save results to various formats
+1. **Introduction & Data Loading** (`01_into_and_data_loading.ipynb`) - Read CSV/Excel files into pandas, inspect DataFrames
+2. **Selection & Indexing** (`02_selection_and_indexing.ipynb`) - Access and filter data efficiently
+3. **Cleaning & Transformations** (`03_cleaning_and_transformations.ipynb`) - Handle missing values, duplicates, data quality
+4. **Merging & Joining** (`04_merging_and_joining.ipynb`) - Combine datasets from multiple sources
+5. **GroupBy & Aggregation** (`05_groupby_and_aggregation.ipynb`) - Grouping, summarizing, and aggregation
+6. **Reshaping & Pivoting** (`06_reshaping_and_pivoting.ipynb`) - Reshape data between long and wide formats
+7. **Exporting & Saving** (`07_exporting_and_saving.ipynb`) - Save results to various formats
 
 All notebooks work with the sample datasets in `data/`.
 
@@ -79,8 +80,8 @@ Built with MkDocs and organized for easy learning:
 3. **Clone this repository:**
 
    ```bash
-   git clone https://gitlab.com/your-org/Data-Wizardry-with-Python.git
-   cd Data-Wizardry-with-Python
+   git clone https://gitlab.td.gfk.com/mm/pet/analysis/data-wizardry-with-python.git
+   cd data-wizardry-with-python
    ```
 
 4. **Sync dependencies:**
@@ -124,7 +125,7 @@ source .venv/bin/activate  # macOS/Linux
 jupyter lab
 ```
 
-Navigate to the `notebooks/` directory and start with `01_data_loading.ipynb`.
+Navigate to the `notebooks/` directory and start with `01_into_and_data_loading.ipynb`.
 
 ### Viewing the Documentation
 
@@ -144,7 +145,7 @@ We recommend following this sequence:
 2. **First Steps**: [05 Quick Start](docs/getting-started/05-quickstart.md) for your first analysis
 3. **Python Basics**: [Python Basics for Analysts](docs/guides/python_basics_for_analysts.md)
 4. **Master pandas**: [pandas Overview](docs/guides/pandas/overview.md)
-5. **Practice**: Work through notebooks in order: `01_data_loading.ipynb` → `02_inspection_and_cleaning.ipynb` → etc.
+5. **Practice**: Work through notebooks in order: `01_into_and_data_loading.ipynb` → `02_selection_and_indexing.ipynb` → etc.
 6. **Reference**: Use [pandas Cheat Sheet](docs/guides/pandas/cheat_sheet.md) and [Cheat Sheets](docs/cheatsheets/cheatsheets.md) as needed
 
 **Coming from another tool?**
@@ -205,8 +206,4 @@ This training material builds on the excellent work of the Python, pandas, and J
 
 ---
 
-**Note**: This repository is hosted on GitLab. Update your remote if you have an existing clone:
-
-```bash
-git remote set-url origin https://gitlab.com/your-org/Data-Wizardry-with-Python.git
-```
+**Note**: This repository is hosted on GitLab at `https://gitlab.td.gfk.com/mm/pet/analysis/data-wizardry-with-python`

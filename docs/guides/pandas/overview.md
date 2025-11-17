@@ -3,7 +3,7 @@
 **pandas** is the essential Python library for data manipulation and analysis. This guide provides a comprehensive introduction for analysts.
 
 !!! tip "Hands-On Practice"
-    For interactive examples using real datasets, see **[notebooks/01_data_loading.ipynb](../../notebooks/01_data_loading.ipynb)** and subsequent notebooks.
+    For interactive examples using real datasets, see **[notebooks/01_into_and_data_loading.ipynb](../../notebooks/01_into_and_data_loading.ipynb)** and subsequent notebooks.
 
 ## What is pandas?
 

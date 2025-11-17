@@ -1,11 +1,11 @@
 site_name: Python Analytics Playground
 site_description: Training materials for transitioning from R and SPSS to Python and pandas
 site_author: Internal Training Team
-site_url: https://gitlab.com/your-org/Data-Wizardry-with-Python/
+site_url: https://gitlab.td.gfk.com/mm/pet/analysis/data-wizardry-with-python/
 
 # Repository
-repo_name: Data-Wizardry-with-Python
-repo_url: https://gitlab.com/your-org/Data-Wizardry-with-Python
+repo_name: data-wizardry-with-python
+repo_url: https://gitlab.td.gfk.com/mm/pet/analysis/data-wizardry-with-python
 
 # Theme
 theme:
@@ -68,12 +68,13 @@ nav:
     - R to Python: guides/r-to-python.md
     - SPSS to Python: guides/spss-to-python.md
   - Notebooks:
-    - 01 Data Loading: notebooks/01_into_and_data_loading.ipynb
-    - 02 Selection and Indexing: notebooks/02_selection_and_indexing.ipynb
-    - 03 Cleaning and Transformations: notebooks/03_cleaning_and_transformations.ipynb
-    - 04 Selection and Filtering: notebooks/04_selection_filtering.ipynb
-    - 05 GroupBy and Aggregation: notebooks/05_groupby_and_aggregation.ipynb
-    - 06 Exporting: notebooks/06_exporting.ipynb
+    - 01 Introduction & Data Loading: notebooks/01_into_and_data_loading.ipynb
+    - 02 Selection & Indexing: notebooks/02_selection_and_indexing.ipynb
+    - 03 Cleaning & Transformations: notebooks/03_cleaning_and_transformations.ipynb
+    - 04 Merging & Joining: notebooks/04_merging_and_joining.ipynb
+    - 05 GroupBy & Aggregation: notebooks/05_groupby_and_aggregation.ipynb
+    - 06 Reshaping & Pivoting: notebooks/06_reshaping_and_pivoting.ipynb
+    - 07 Exporting & Saving: notebooks/07_exporting_and_saving.ipynb
   - Reference:
     - Cheat Sheets: cheatsheets/cheatsheets.md
     - Glossary: reference/glossary.md
@@ -87,4 +88,4 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/gitlab
-      link: https://gitlab.com/your-org/Data-Wizardry-with-Python
+      link: https://gitlab.td.gfk.com/mm/pet/analysis/data-wizardry-with-python

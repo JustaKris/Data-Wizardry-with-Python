@@ -537,7 +537,7 @@ Now that you know the basics:
 
 1. **Practice with data**: Try the [Quick Start Guide](../getting-started/quickstart.md)
 2. **Learn pandas**: See the [pandas Overview](pandas/overview.md)
-3. **Explore notebooks**: Work through `notebooks/01_data_loading.ipynb`
+3. **Explore notebooks**: Work through `notebooks/01_into_and_data_loading.ipynb`
 4. **Cheat sheets**: Bookmark the [Cheat Sheets](../cheatsheets/cheatsheets.md)
 
 ## Recommended Learning Resources
