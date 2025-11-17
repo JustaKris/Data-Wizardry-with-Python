@@ -1,0 +1,79 @@
+site_name: Python Analytics Playground
+site_description: Training materials for transitioning from R and SPSS to Python and pandas
+site_author: Internal Training Team
+site_url: https://justakris.github.io/Data-Wizardry-with-Python/
+
+# Repository
+repo_name: JustaKris/Data-Wizardry-with-Python
+repo_url: https://github.com/JustaKris/Data-Wizardry-with-Python
+
+# Theme
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+
+# Extensions
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
+  - admonition
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+
+# Navigation
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation: getting-started/installation.md
+    - Quick Start: getting-started/quickstart.md
+    - For R Users: getting-started/r-to-python.md
+    - For SPSS Users: getting-started/spss-to-python.md
+  - Tutorials:
+    - Python Basics: tutorials/01-python-basics.md
+    - Pandas Fundamentals: tutorials/02-pandas-fundamentals.md
+    - Data Visualization: tutorials/03-data-visualization.md
+    - Statistical Analysis: tutorials/04-statistical-analysis.md
+  - Reference:
+    - Cheat Sheets: reference/cheatsheets.md
+    - Glossary: reference/glossary.md
+    - Resources: reference/resources.md
+
+# Plugins
+plugins:
+  - search
+
+# Extra
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/JustaKris/Data-Wizardry-with-Python
