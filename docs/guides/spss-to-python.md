@@ -25,6 +25,7 @@ Welcome SPSS users! This guide will help you translate your SPSS knowledge into 
 | Sort cases | `SORT CASES BY age (D)` | `df = df.sort_values('age', ascending=False)` |
 
 **Pandas Example:**
+
 ```python
 import pandas as pd
 
@@ -54,6 +55,7 @@ df = df.sort_values('age', ascending=False)
 | Means by group | `MEANS TABLES=salary BY department` | `df.groupby('department')['salary'].mean()` |
 
 **Pandas Example:**
+
 ```python
 # Frequencies
 print(df['Gender'].value_counts())
@@ -81,6 +83,7 @@ print(df.groupby('Gender')['weight'].mean())
 | Regression | `REGRESSION /DEPENDENT=salary /METHOD=ENTER age experience` | `model = smf.ols('salary ~ age + experience', data=df).fit()` |
 
 **Pandas Example:**
+
 ```python
 from scipy import stats
 import statsmodels.formula.api as smf
@@ -110,6 +113,7 @@ print(corr_matrix)
 | Add aggregated variable | `AGGREGATE /OUTFILE=* MODE=ADDVARIABLES` | `df['dept_mean'] = df.groupby('dept')['salary'].transform('mean')` |
 
 **Pandas Example:**
+
 ```python
 # Simple aggregation
 dept_avg = df.groupby('People_in_Household')['weight'].mean()
@@ -131,6 +135,7 @@ df['gender_avg_weight'] = df.groupby('Gender')['weight'].transform('mean')
 | Add cases | `ADD FILES /FILE='file1.sav' /FILE='file2.sav'` | `pd.concat([df1, df2], ignore_index=True)` |
 
 **Pandas Example:**
+
 ```python
 # Read the two sample data files
 socio = pd.read_csv("data/socio_demos.csv")
@@ -146,7 +151,6 @@ print(merged.head())
 ```
 
 ---
-
 
 ## Reading SPSS Files in Python
 

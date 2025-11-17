@@ -126,9 +126,15 @@
 
 ## Package Managers
 
-- [pip](https://pip.pypa.io/en/stable/) - Python package installer
+- [uv](https://github.com/astral-sh/uv) - Fast Python package and project manager (recommended)
+- [pip](https://pip.pypa.io/en/stable/) - Traditional Python package installer
 - [conda](https://docs.conda.io/en/latest/) - Package and environment manager
 - [Anaconda](https://www.anaconda.com/) - Python distribution for data science
+
+## Modern Python Standards
+
+- [PEP 621](https://peps.python.org/pep-0621/) - Project metadata in `pyproject.toml`
+- [pyproject.toml Guide](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/) - Official packaging guide
 
 ## Best Practices
 

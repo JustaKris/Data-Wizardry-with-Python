@@ -1,77 +1,80 @@
-# Welcome to Python Analytics Playground
+# Welcome to Data Wizardry with Python
 
-Welcome to your comprehensive guide for transitioning from R and SPSS to Python and pandas!
+Welcome to your comprehensive guide for transitioning from R and SPSS to Python!
 
 ## About This Project
 
-The **Python Analytics Playground** is an internal training repository designed to help analysts and data scientists make the transition to Python. Whether you're coming from R, SPSS, or are completely new to programming for analytics, this resource will guide you through the essentials.
+**Data Wizardry with Python** is an internal training repository designed to help analysts and data scientists make the transition to Python. Whether you're coming from R, SPSS, or are completely new to programming for analytics, this resource will guide you through the essentials.
 
 ## Why Python for Analytics?
 
 Python has become one of the most popular languages for data analysis because:
 
 - **Versatile**: Use the same language for data cleaning, analysis, visualization, and deployment
-- **Powerful Libraries**: pandas, NumPy, scikit-learn, and more provide comprehensive functionality
+- **Powerful Libraries**: pandas, NumPy, matplotlib, seaborn, and more provide comprehensive functionality
 - **Active Community**: Extensive documentation, tutorials, and support
 - **Integration**: Works seamlessly with databases, APIs, and web frameworks
 - **Free and Open Source**: No licensing costs, transparent development
 
 ## What You'll Learn
 
-### For R Users
+### Getting Started
 
-If you're coming from R, you'll find:
+- **[Installation Overview](getting-started/01-installation.md)**: Setup requirements and workflow
+- **[Installing Python](getting-started/02-python.md)**: Get Python from Company Portal
+- **[Using uv](getting-started/03-uv.md)**: Modern package management with uv sync
+- **[Running Notebooks](getting-started/04-notebooks.md)**: Work with Jupyter in VS Code
+- **[Quickstart](getting-started/05-quickstart.md)**: Your first data analysis
 
-- Side-by-side comparisons of R and Python syntax
-- How to achieve common R operations in pandas
-- Transitioning from ggplot2 to matplotlib/seaborn
-- Working with dataframes in both languages
+### Core Guides
 
-### For SPSS Users
+- **[Python Basics for Analysts](guides/python_basics_for_analysts.md)**: Essential Python concepts
+- **[R to Python Guide](guides/r-to-python.md)**: Translation guide for R users
+- **[SPSS to Python Guide](guides/spss-to-python.md)**: Translation guide for SPSS users
 
-If you're coming from SPSS, we'll cover:
+### pandas Documentation
 
-- Loading and saving SPSS files in Python
-- Replicating SPSS procedures (FREQUENCIES, CROSSTABS, etc.)
-- Statistical testing and analysis
-- Creating publication-ready tables and charts
+- **[pandas Overview](guides/pandas/overview.md)**: Comprehensive pandas guide
+- **[pandas Cheat Sheet](guides/pandas/cheat_sheet.md)**: Quick reference for common tasks
 
-### For Everyone
+### Interactive Notebooks
 
-Regardless of your background:
+Hands-on tutorials in `notebooks/`:
 
-- Python fundamentals and best practices
-- pandas for data manipulation
-- Visualization with matplotlib and seaborn
-- Statistical analysis with scipy and statsmodels
-- Real-world workflow examples
+1. **Data Loading** (`01_data_loading.ipynb`): Read CSV files, inspect DataFrames, understand data types
+2. **Data Cleaning** (`02_data_cleaning.ipynb`): Handle missing values, duplicates, and data quality
+3. **Exploratory Data Analysis** (`03_eda.ipynb`): Summarize and visualize your data
+4. **Data Manipulation** (`04_data_manipulation.ipynb`): Filter, transform, and reshape data
+5. **Advanced Analysis** (`05_advanced_analysis.ipynb`): Grouping, aggregation, and joins
+6. **Exporting** (`06_exporting.ipynb`): Save results to various formats
 
-## Getting Started
+### Reference
 
-!!! tip "New to Python?"
-    Start with our [Installation Guide](getting-started/installation.md) and then proceed to the [Quick Start](getting-started/quickstart.md).
-
-!!! info "Coming from R?"
-    Jump to our [R to Python Guide](getting-started/r-to-python.md) for a familiar entry point.
-
-!!! info "Coming from SPSS?"
-    Check out our [SPSS to Python Guide](getting-started/spss-to-python.md) for targeted comparisons.
+- **[Cheatsheets](cheatsheets/cheatsheets.md)**: Quick references for NumPy, Matplotlib, and more
+- **[Glossary](reference/glossary.md)**: Key terms and concepts
+- **[Resources](reference/resources.md)**: External learning materials
 
 ## Repository Structure
 
 ```text
-python-analytics-playground/
+Data-Wizardry-with-Python/
 ├── notebooks/          # Jupyter notebooks with hands-on tutorials
-│   ├── 01-introduction.ipynb
-│   ├── 02-pandas-fundamentals.ipynb
-│   ├── 03-data-visualization.ipynb
-│   └── 04-statistical-analysis.ipynb
+│   ├── 01_data_loading.ipynb
+│   ├── 02_data_cleaning.ipynb
+│   ├── 03_eda.ipynb
+│   ├── 04_data_manipulation.ipynb
+│   ├── 05_advanced_analysis.ipynb
+│   └── 06_exporting.ipynb
+├── data/              # Sample datasets
+│   ├── media_contacts.csv
+│   └── socio_demos.csv
 ├── docs/              # MkDocs documentation source
 │   ├── getting-started/
-│   ├── tutorials/
+│   ├── guides/
+│   ├── cheatsheets/
 │   └── reference/
-├── mkdocs.yml         # Documentation configuration
-└── requirements.txt   # Python dependencies
+├── pyproject.toml     # Modern Python project configuration
+└── mkdocs.yml         # Documentation configuration
 ```
 
 ## Learning Approach
@@ -97,8 +100,8 @@ No prior Python experience is required, but it's helpful if you've programmed be
 - 💻 Work through the Jupyter notebooks in the `notebooks/` directory
 - 🔍 Search for specific topics using the search bar
 - 📝 Check the [Glossary](reference/glossary.md) for terminology
-- 📊 Use our [Cheat Sheets](reference/cheatsheets.md) for quick reference
+- 📊 Use our [Cheatsheets](cheatsheets/cheatsheets.md) for quick reference
 
 Ready to begin your Python journey? Let's get started!
 
-[Get Started →](getting-started/installation.md){ .md-button .md-button--primary }
+[Get Started →](getting-started/01-installation.md){ .md-button .md-button--primary }

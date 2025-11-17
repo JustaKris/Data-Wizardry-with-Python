@@ -54,18 +54,28 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Getting Started:
-    - Installation: getting-started/installation.md
+    - 01 Installation: getting-started/01-installation.md
+    - 02 Installing Python: getting-started/02-python.md
+    - 03 Using uv: getting-started/03-uv.md
+    - 04 Running Notebooks: getting-started/04-notebooks.md
+    - 05 Quick Start: getting-started/05-quickstart.md
     - Git Guide: getting-started/git-guide.md
-    - Quick Start: getting-started/quickstart.md
-    - For R Users: getting-started/r-to-python.md
-    - For SPSS Users: getting-started/spss-to-python.md
-  - Tutorials:
-    - Python Basics: tutorials/01-python-basics.md
-    - Pandas Fundamentals: tutorials/02-pandas-fundamentals.md
-    - Data Visualization: tutorials/03-data-visualization.md
-    - Statistical Analysis: tutorials/04-statistical-analysis.md
+  - Guides:
+    - Python Basics for Analysts: guides/python_basics_for_analysts.md
+    - pandas:
+      - Overview: guides/pandas/overview.md
+      - Cheat Sheet: guides/pandas/cheat_sheet.md
+    - R to Python: guides/r-to-python.md
+    - SPSS to Python: guides/spss-to-python.md
+  - Notebooks:
+    - 01 Data Loading: notebooks/01_into_and_data_loading.ipynb
+    - 02 Selection and Indexing: notebooks/02_selection_and_indexing.ipynb
+    - 03 Cleaning and Transformations: notebooks/03_cleaning_and_transformations.ipynb
+    - 04 Selection and Filtering: notebooks/04_selection_filtering.ipynb
+    - 05 GroupBy and Aggregation: notebooks/05_groupby_and_aggregation.ipynb
+    - 06 Exporting: notebooks/06_exporting.ipynb
   - Reference:
-    - Cheat Sheets: reference/cheatsheets.md
+    - Cheat Sheets: cheatsheets/cheatsheets.md
     - Glossary: reference/glossary.md
     - Resources: reference/resources.md
 

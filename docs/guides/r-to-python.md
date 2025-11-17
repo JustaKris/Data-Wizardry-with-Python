@@ -15,6 +15,7 @@ The table below shows the most common R dplyr operations and their pandas equiva
 | Drop columns | `df %>% select(-age)` | `df.drop(columns=['age'])` |
 
 **Pandas Example:**
+
 ```python
 import pandas as pd
 
@@ -40,6 +41,7 @@ result = df[['name', 'age']]
 | Using query (cleaner) | N/A | `df.query('age > 25 & dept == "Sales"')` |
 
 **Pandas Example:**
+
 ```python
 # Filter rows where age > 25
 result = df[df['age'] > 25]
@@ -60,6 +62,7 @@ result = df.query('age > 25 & dept == "Sales"')
 | Conditional column | `df %>% mutate(senior = if_else(age > 30, "Yes", "No"))` | `df['senior'] = df['age'].apply(lambda x: 'Yes' if x > 30 else 'No')` or `np.where(df['age'] > 30, 'Yes', 'No')` |
 
 **Pandas Example:**
+
 ```python
 import numpy as np
 
@@ -92,6 +95,7 @@ df['senior'] = df['age'].apply(lambda x: 'Yes' if x > 30 else 'No')
 | Multiple groups | `df %>% group_by(dept, senior) %>% summarise(avg_sal = mean(salary))` | `df.groupby(['dept', 'senior'])['salary'].mean()` |
 
 **Pandas Example:**
+
 ```python
 # Single aggregation
 result = df.groupby('dept')['salary'].mean()
@@ -126,6 +130,7 @@ result = df.groupby('dept').agg(
 | Join on different columns | `left_join(df1, df2, by = c("id1" = "id2"))` | `pd.merge(df1, df2, left_on='id1', right_on='id2', how='left')` |
 
 **Pandas Example:**
+
 ```python
 # Sample data for joins
 df1 = pd.DataFrame({
@@ -162,7 +167,6 @@ result = pd.merge(df1, df2, left_on='id', right_on='employee_id', how='left')
 | **Indexing** | 1-based | 0-based |
 | **Assignment** | `<-` or `=` | `=` |
 | **Packages** | CRAN, install.packages() | PyPI, pip install |
-
 
 ## Additional Operations
 
@@ -265,7 +269,6 @@ df_long = pd.melt(df, id_vars=['id'], value_vars=['Q1', 'Q2', 'Q3'])
 # Long to wide
 df_wide = df.pivot(index='id', columns='quarter', values='revenue')
 ```
-
 
 ### Missing Data
 

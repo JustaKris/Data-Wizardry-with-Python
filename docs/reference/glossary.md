@@ -22,6 +22,8 @@
 
 **DataFrame**: pandas' primary 2-dimensional labeled data structure with columns of potentially different types.
 
+**Dependency Group**: Optional dependencies in `pyproject.toml` for specific use cases (e.g., `[dev]`, `[docs]`).
+
 **dtype**: Data type of a column (int64, float64, object, etc.).
 
 ## F
@@ -78,7 +80,11 @@
 
 **pandas**: Python Data Analysis Library, primary tool for data manipulation.
 
+**PEP 621**: Python Enhancement Proposal defining project metadata format in `pyproject.toml`.
+
 **Pivot Table**: Reshaping tool that summarizes data using aggregation.
+
+**pyproject.toml**: Modern Python project configuration file (dependencies, metadata, tool settings).
 
 **Python**: High-level, general-purpose programming language.
 
@@ -95,6 +101,10 @@
 ## T
 
 **Tuple**: Ordered, immutable collection of items in Python.
+
+## U
+
+**uv**: Modern, fast Python package manager written in Rust. Alternative to pip with automatic venv management.
 
 ## V
 

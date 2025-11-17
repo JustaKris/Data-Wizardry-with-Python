@@ -20,6 +20,7 @@ Think of it as "track changes" for code, but much more powerful.
 Download from [git-scm.com](https://git-scm.com/download/win) and run the installer.
 
 **Recommended settings during installation:**
+
 - Use Visual Studio Code as Git's default editor
 - Override the default branch name: use `main`
 - Use bundled OpenSSH
@@ -114,11 +115,13 @@ git commit -m "Add data cleaning function"
 ```
 
 **Good commit messages:**
+
 - "Fix bug in data import"
 - "Add visualization for sales trends"
 - "Update documentation for installation"
 
 **Bad commit messages:**
+
 - "Update"
 - "Changes"
 - "asdfasdf"
@@ -272,6 +275,7 @@ This repository will be hosted on GitLab. GitLab is similar to GitHub but offers
 ### Creating a Merge Request
 
 1. **Push your branch**:
+
    ```bash
    git push -u origin feature/your-feature
    ```
@@ -303,12 +307,15 @@ git clone git@gitlab.com:your-org/Data-Wizardry-with-Python.git
 SSH keys provide secure authentication without passwords.
 
 1. **Generate SSH key**:
+
    ```bash
    ssh-keygen -t ed25519 -C "your.email@example.com"
    ```
+
    Press Enter to accept defaults.
 
 2. **Copy public key**:
+
    ```bash
    # macOS
    pbcopy < ~/.ssh/id_ed25519.pub
@@ -327,6 +334,7 @@ SSH keys provide secure authentication without passwords.
    - Click "Add key"
 
 4. **Test connection**:
+
    ```bash
    ssh -T git@gitlab.com
    ```
@@ -410,6 +418,7 @@ When Git can't automatically merge changes:
    - Stage and commit
 
 2. **Manual approach**:
+
    ```bash
    # Edit the conflicted file
    # Look for conflict markers: <<<<<<<, =======, >>>>>>>
@@ -464,6 +473,7 @@ Now that you understand Git:
 4. ✅ Basic workflow understood
 
 Continue with:
+
 - [Installation Guide](installation.md) - Set up Python and dependencies
 - [Quick Start Guide](quickstart.md) - Start coding!
 
